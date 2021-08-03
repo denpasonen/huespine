@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isSingleButton"
+            type="Boolean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="24dp">
+
+            <TextView
+                android:id="@+id/tv_alert_title"
+                style="@style/Dialog.Text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="50dp"
+                android:maxHeight="100dp"
+                android:overScrollMode="ifContentScrolls"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@id/btn_alert_positive"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="{필수값}을 입력하세요." />
+
+            <Button
+                android:id="@+id/btn_alert_negative"
+                style="@style/NotoMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:textAlignment="center"
+                android:textSize="17sp"
+                android:visibility="@{isSingleButton ? View.GONE : View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="@id/btn_alert_positive"
+                app:layout_constraintEnd_toStartOf="@id/btn_alert_positive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_alert_positive"
+                tools:text="취소" />
+
+            <Button
+                android:id="@+id/btn_alert_positive"
+                style="@style/NotoMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:textAlignment="center"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_alert_negative"
+                app:layout_constraintTop_toBottomOf="@id/tv_alert_title"
+                tools:text="확인" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
