@@ -16,7 +16,7 @@ class CustomApplication : BaseApplication() {
         Logger.addLogAdapter(AndroidLogAdapter())
 
         RxJavaPlugins.setErrorHandler { error: Throwable ->
-            FirebaseCrashlytics.getInstance().recordException(error)
+//            FirebaseCrashlytics.getInstance().recordException(error)
         }
 
         initUncaughtExceptionHandler()

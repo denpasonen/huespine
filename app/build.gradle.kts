@@ -155,11 +155,6 @@ dependencies {
 //    implementation("com.kakao.sdk:v2-link:2.5.2") // 메시지(카카오링크)
     implementation("gun0912.ted:tedpermission:2.2.3")
     implementation("com.google.android:flexbox:2.0.1")
-
-//    implementation("com.naver.nid:naveridlogin-android-sdk:4.2.6")
-//    implementation("com.kakao.sdk:v2-user:2.5.2")
-
-
 }
 
 kapt {

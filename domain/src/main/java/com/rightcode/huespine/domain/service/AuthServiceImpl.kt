@@ -91,18 +91,6 @@ class AuthServiceImpl @Inject constructor(
 
     override fun passwordReset(email: String) = authRepository.passwordReset(email)
 
-    override fun loginWithNaver(token: String): Completable {
-        return authRepository.loginWithSocial("naver", token)
-            .flatMapCompletable { user ->
-                Completable.mergeArray(
-                    saveUser(user),
-                    saveSession(user.id),
-                    subscribeFirebase(user.id)
-                )
-            }
-    }
-
-
     override fun loginWithKakao(token: String): Completable {
         return authRepository.loginWithSocial("kakao", token)
             .flatMapCompletable { user ->

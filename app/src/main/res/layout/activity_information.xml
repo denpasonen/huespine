@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="input"
+            type="com.rightcode.huespine.view.information.InformationViewModelType.Input" />
+
+        <variable
+            name="output"
+            type="com.rightcode.huespine.view.information.InformationViewModelType.Output" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_top"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="40dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_bottom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_start"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_end"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <TextView
+                android:id="@+id/tv_information_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="허리업을 이용하기 전에\n신체사항을 입력해주세요!"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/guide_top" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:text="이름"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_information_title" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fdfdfd_e8e8e8_round8"
+                android:hint="이름을 입력해주세요"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:text="성별"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_gender">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_circle"
+                    android:paddingLeft="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="남성" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:paddingLeft="10dp"
+                    android:button="@drawable/selector_circle"
+                    android:text="여성" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:text="키"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+            <EditText
+                android:id="@+id/et_height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fdfdfd_e8e8e8_round8"
+                android:hint="숫자만 입력해주세요"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_height" />
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:text="몸무게"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/et_height" />
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fdfdfd_e8e8e8_round8"
+                android:hint="숫자만 입력해주세요"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_weight" />
+
+            <CheckBox
+                android:id="@+id/cb_privacy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:button="@drawable/selector_circle"
+                android:drawableRight="@drawable/ic_arrow_down_grey"
+                android:paddingVertical="10dp"
+                android:text="개인정보처리방침"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/et_weight" />
+
+            <TextView
+                android:id="@+id/tv_privacy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="제 1조 (목적)
+이 이용약관(이하 ‘약관’이라 합니다.)(이하 ‘회사’라 합니다.)에서
+이용고객(이하 '‘이용자’라 한다.)에게 제공하는 홈페이지 및 어플
+리케이션 허리업. 허리업을 이용함에 있어 가입조건 및 이용에 관
+한 제반 사항과 기타 필요한
+사항, 회원과 회사 간의 권리, 의무 및 책임사항 등 여러 사항을
+구체적으로 규정함을 목적으로 합니다.
+
+제 2조 (정의)
+이 이용약관(이하 ‘약관’이라 합니다.)(이하 ‘회사’라 합니다.)에서
+이용고객(이하 '‘이용자’라 한다.)에게 제공하는 홈페이지 및 어플
+리케이션 허리업. 허리업을 이용함에 있어 가입조건 및 이용에 관
+한 제반 사항과 기타 필요한
+사항, 회원과 회사 간의 권리, 의무 및 책임사항 등 여러 사항을
+구체적으로 규정함을 목적으로 합니다.
+
+제 3조
+이 이용약관(이하 ‘약관’이라 합니다.)(이하 ‘회사’라 합니다.)에서
+이용고객(이하 '‘이용자’라 한다.)에게 제공하는 홈페이지 및 어플
+리케이션 허리업. 허리업을 이용함에 있어 가입조건 및 이용에 관
+한 제반 사항과 기타 필요한
+사항, 회원과 회사 간의 권리, 의무 및 책임사항 등 여러 사항을
+구체적으로 규정함을 목적으로 합니다."
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/cb_privacy" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_appcolor_round8"
+                android:gravity="center"
+                android:text="완료"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_privacy" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

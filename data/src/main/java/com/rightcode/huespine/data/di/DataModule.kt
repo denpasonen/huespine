@@ -149,11 +149,4 @@ internal interface DataModule {
     fun bindMessagingRepository(
         repository: MessagingRepositoryImpl
     ): MessagingRepository
-
-    @Singleton
-    @Binds
-    fun bindNaverAuthRepository(
-        repository: NaverAuthRepositoryImpl
-    ): NaverAuthRepository
-
 }

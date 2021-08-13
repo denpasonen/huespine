@@ -8,11 +8,11 @@
 
         <variable
             name="input"
-            type="com.rightcode.huespine.view.main.MainViewModelType" />
+            type="com.rightcode.huespine.view.main.MainViewModelType.Input" />
 
         <variable
             name="output"
-            type="com.rightcode.huespine.view.main.MainViewModelType" />
+            type="com.rightcode.huespine.view.main.MainViewModelType.Output" />
 
         <variable
             name="item"

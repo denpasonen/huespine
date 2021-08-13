@@ -11,12 +11,9 @@ import com.facebook.spectrum.plugins.SpectrumPluginJpeg
 import com.facebook.spectrum.plugins.SpectrumPluginPng
 import com.facebook.spectrum.plugins.SpectrumPluginWebp
 import com.rightcode.huespine.local.BuildConfig
-import com.rightcode.huespine.local.naver.NaverWrapper
-import com.rightcode.huespine.local.naver.NaverWrapperImpl
 import com.rightcode.huespine.local.preferences.SharedPreferencesFactory
 import com.rightcode.huespine.local.room.dao.UserDao
 import com.rightcode.huespine.local.room.RightCodeDatabase
-import com.nhn.android.naverlogin.OAuthLogin
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -68,21 +65,4 @@ internal class LocalModule {
     ): ContentResolver {
         return context.contentResolver
     }
-
-    @Singleton
-    @Provides
-    fun provide0AuthLogin(): OAuthLogin {
-        return OAuthLogin.getInstance()
-    }
-
-    @Singleton
-    @Provides
-    fun provideNaverWrapper(
-        context: Context,
-        oAuthLogin: OAuthLogin
-    ): NaverWrapper {
-        return NaverWrapperImpl(context, oAuthLogin)
-    }
-
-
 }

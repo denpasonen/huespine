@@ -34,8 +34,6 @@ interface AuthService {
 
     fun passwordReset(email: String): Completable
 
-    fun loginWithNaver(token: String): Completable
-
     fun loginWithKakao(token: String): Completable
 
     fun loginWithApple(

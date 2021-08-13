@@ -72,12 +72,6 @@ internal interface LocalDataModule {
 
     @Singleton
     @Binds
-    fun bindNaverAuthLocalDataSource(
-        dataSource: NaverAuthLocalDataSourceImpl
-    ): NaverAuthLocalDataSource
-
-    @Singleton
-    @Binds
     fun bindSearchLocalDataSource(
         dataSource: SearchLocalDataSourceImpl
     ): SearchLocalDataSource

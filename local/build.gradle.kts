@@ -65,12 +65,4 @@ dependencies {
     implementation("com.facebook.spectrum:spectrum-webp:1.2.0")
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
-
-    implementation("com.naver.nid:naveridlogin-android-sdk:4.2.6") {
-        exclude("com.android.support", "appcompat-v7")
-        exclude("com.android.support", "support-core-utils")
-        exclude("com.android.support", "customtabs")
-        exclude("com.android.support", "support-v4")
-    }
-
 }

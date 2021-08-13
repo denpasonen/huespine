@@ -33,7 +33,6 @@ class MainViewModel @Inject constructor(
     override val routeCalendar: LiveData<Unit> = _routeCalendar
 
     init {
-
         bannerService
             .getNotShowToday()
             .map {

@@ -87,7 +87,3 @@
 -dontwarn okhttp3.internal.platform.ConscryptPlatform
 
 -keepclassmembers enum com.rightcode.huespine.remote.model.**{ *; }
-
--keep public class com.nhn.android.naverlogin.** {
-       public protected *;
-}

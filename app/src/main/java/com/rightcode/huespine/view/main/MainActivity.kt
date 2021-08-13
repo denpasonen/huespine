@@ -6,6 +6,7 @@ import com.rightcode.huespine.R
 import com.rightcode.huespine.databinding.ActivityMainBinding
 import com.rightcode.huespine.view.base.ActivityLauncher
 import com.rightcode.huespine.view.base.BaseActivity
+import com.rightcode.huespine.view.information.InformationActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.reflect.KClass
 
@@ -21,6 +22,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModelType>(
         viewModel: MainViewModelType
     ) {
         super.onWillAttachViewModel(lifecycleOwner, viewDataBinding, viewModel)
+
+        with(viewModel.output) {
+            isShowBanner.observe {
+                if(it) InformationActivity.startActivity(this@MainActivity)
+            }
+        }
     }
 
     companion object : ActivityLauncher<MainActivity>() {
